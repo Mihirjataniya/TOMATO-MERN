@@ -4,18 +4,18 @@ import Navbar from '../components/Navbar'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import API_URL from '../Config'
-import ClipLoader from "react-spinners/ClipLoader";
+
 
 
 const Cart = () => {
-    const [loading,setLoading] = useState(false)
+    
     const [items, setItems] = useState([])
     let Total = 0
     const navigate = useNavigate()
     useEffect(() => {
         const fetchCartItems = async () => {
             try {
-                setLoading(true)
+                
                 const response = await axios.get(`${API_URL}/Cart/getitems`,{
                     headers: {
                         "authorization": "Bearer " + localStorage.getItem("authToken")

@@ -10,8 +10,10 @@ import axios from 'axios'
 import notifcation from '../components/Notification'
 import { ToastContainer} from 'react-toastify';
 import API_URL from '../Config'
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Signup = () => {
+  const [loading,setLoading] = useState(false)
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState(0)
@@ -28,6 +30,7 @@ const Signup = () => {
   const submitDetails = async () => {
 
     try {
+      setLoading(true)
       const response = await axios.post(`${API_URL}/User/signup`, {
         name: name,
         email: email,
@@ -37,7 +40,7 @@ const Signup = () => {
       console.log(response.status)
       if (response.status === 200) {
         localStorage.setItem("authToken", response.data.token)
-        notifcation('success', 'SignUp Succesful')
+          notifcation('success', 'SignUp Succesful')
         setTimeout(() => {
           navigate("/")
         }, 2000);
@@ -51,6 +54,8 @@ const Signup = () => {
       } else if (error.response.status === 500) {
         notifcation('error', 'Something Went wrong')
       }
+    }finally{
+      setLoading(false)
     }
   }
   return (
@@ -65,14 +70,15 @@ const Signup = () => {
           }} label={"Name"} type={"text"} placeholder={"Enter Your Name"} />
           <Input onChange={(e) => {
             setPhone(e.target.value)
-          }} label={"Phone"} type={"text"} placeholder={"Enter Your Phone NO."} />
+          }} label={"Phone"} type={"text"} placeholder={"Enter Your Phone NO."} warning={"Must be 10 digits"} />
           <Input onChange={(e) => {
             setEmail(e.target.value)
           }} label={"Email"} type={"text"} placeholder={"Enter Your Email"} />
           <Input onChange={(e) => {
             setPassword(e.target.value)
-          }} label={"Password"} type={"password"} placeholder={"Enter Your Password"} />
-          <Button onClick={submitDetails} text={"Sign up"} />
+          }} label={"Password"} type={"password"} placeholder={"Enter Your Password"} warning={"Minimum 6 digits"} />
+           {loading? <div className='flex justify-center items-center my-5 w-full'> <ClipLoader color={"#800020"} size={50} aria-label="Loading Spinner" data-testid="loader"/> </div> :  <Button onClick={submitDetails} text={"Sign up"} />}
+          
           <Bottom text={"Already have an account? "} to={'/login'} linktext={'LogIn'} />
           <ToastContainer />
         </div>
