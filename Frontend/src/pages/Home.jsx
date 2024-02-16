@@ -57,7 +57,7 @@ const Home = () => {
                 ).map((category) => (
                     <React.Fragment key={category.CategoryName}>
                         <ItemHeading heading={category.CategoryName} />
-                        <div className='my-10 flex gap-10 max-sm:my-5 max-sm:gap-4 flex-wrap'>
+                        <div className='my-10 flex gap-10 max-sm:my-5 max-sm:gap-4 flex-wrap max-sm:overflow-x-auto max-sm:flex-nowrap'  >
                             {fooditems.map((item) => {
                                 
                                 if ((category.CategoryName === item.CategoryName)  &&
