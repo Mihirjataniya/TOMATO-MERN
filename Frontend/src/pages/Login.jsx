@@ -25,8 +25,7 @@ const Login = () => {
       const response =await axios.post(`${API_URL}/User/login`,{
         email: email,
         password: password
-      })
-      console.log(response)
+      }) 
       if (response.status === 200){
         localStorage.setItem("authToken",response.data.token)
         notifcation('success',"LogIn successful")
