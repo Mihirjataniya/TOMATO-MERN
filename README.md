@@ -8,7 +8,7 @@ Tomato is a full-stack food delivery web application built with React.js, Expres
 
 ## Live Demo
 
-Check out the live demo [here](your_live_demo_url).
+Check out the live demo [here](https://tomato-food-delivery.netlify.app/).
 
 ## Features
 
