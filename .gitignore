@@ -1,0 +1,15 @@
+# .gitignore
+
+# Node.js
+node_modules/
+
+# Environment variables
+.env
+
+# Build artifacts
+build/
+dist/
+
+# Visual Studio Code
+.vscode/
+
