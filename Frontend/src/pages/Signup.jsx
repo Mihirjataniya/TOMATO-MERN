@@ -62,7 +62,7 @@ const Signup = () => {
 
     <div className='flex flex-col h-screen w-full'>
       <Navbar />
-      <div className='flex-1 mt-24 w-f flex justify-center max-sm:p-2 items-center'>
+      <div className='flex-1 mt-24 w-f flex justify-center max-sm:p-2 items-center max-sm:mt-12'>
         <div className='w-[450px] p-8 border-4  border-[#800020] font-Inter rounded-lg'>
           <Heading text={"Sign Up"} />
           <Input onChange={(e) => {
