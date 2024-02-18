@@ -56,7 +56,7 @@ const CheckOut = () => {
               <Heading text={"Place your order!!"} />
               <div className='mt-10 max-sm:mt-6'>
                 <Input  type={"text"} defaultvalue={name} label={"Name"} />
-                <Input type={"text"} defaultvalue={phone} label={"Name"} />
+                <Input type={"text"} defaultvalue={phone} label={"Phone"} />
                 <Input onChange={(e)=>setAddress(e.target.value)} type={'text'} label={"Address"} placeholder={"Enter Your address"} />
                 <Input type={"text"} label={"Coupon Code"} placeholder={"Enter Coupon"} />
                 <select className='bg-transparent border w-full p-2 text-lg' name="Select Payment method" id="" >
