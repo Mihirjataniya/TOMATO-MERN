@@ -22,7 +22,7 @@ function App() {
           <Route path='/userProfile' element={<PrivateRoute Component={UserProfile} />} />
           <Route path='/CheckOut' element={<PrivateRoute Component={CheckOut} />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter>  
 
     </>
   )

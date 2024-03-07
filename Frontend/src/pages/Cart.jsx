@@ -35,7 +35,6 @@ const Cart = () => {
     })
 
     const checkout = () => {
-        console.log("clicked")
         navigate(`/CheckOut?total=${Total}`)
     }
 

@@ -34,7 +34,7 @@ const Card = ({ itemname, price, description, image, item_id }) => {
   }
   }
   return (
-    <div className={`max-w-[300px] bg-[#800020] rounded text-[white] p-2 relative max-sm:p-1 max-sm:min-w-[150px] flex flex-col`}>
+    <div className={`w-[300px] bg-[#800020] rounded text-[white] p-2 relative max-sm:p-1 max-sm:min-w-[150px] flex flex-col`}>
       <div className='image-container h-40 max-sm:h-20 rounded overflow-hidden'>
         <img className='w-full h-full object-cover' src={image} alt="" />
       </div>
