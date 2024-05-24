@@ -63,7 +63,7 @@ To get a local copy of the project up and running, follow these steps:
    node index.js
    ```
 
-   The server will be running at `http://localhost:3001`.
+   The server will be running at `http://localhost:3000`.
 
 2. Start the frontend:
 
