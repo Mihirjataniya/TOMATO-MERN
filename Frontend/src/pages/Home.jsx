@@ -7,7 +7,7 @@ import ItemHeading from '../components/ItemHeading'
 import Carousel from '../components/Carousel'
 import API_URL from '../Config'
 import ClipLoader from "react-spinners/ClipLoader";
-
+import foodCategory from "../../../JSON/foodCategory.json"
 const Home = () => {
     
     const [search,setSearch] = useState('')
@@ -18,7 +18,7 @@ const Home = () => {
     const Retrivedata = async () => {
 
         try {
-            const response = await axios.get( `${API_URL}/Display/data`)
+            // const response = await axios.get( `${API_URL}/Display/data`)
             setFooditems(response.data.food_items)
             setFoodcategory(response.data.food_category)
         } catch (error) {
@@ -47,7 +47,8 @@ const Home = () => {
                             <input onChange={(e)=>{setSearch(e.target.value)}} type="search" id="default-search" className="block w-full bg-transparent p-4 ps-10 text-sm border  rounded-lg placeholder-white max-sm:p-2 max-sm:ps-8" placeholder="Search Items.." required />
                         </div>
             </div>
-            {fooditems.length == 0 ? <div className='flex justify-center items-center my-5'> <ClipLoader color={"#800020"} size={50} aria-label="Loading Spinner" data-testid="loader"/> </div> : <div className='w-full px-10 my-8 overflow-x-auto max-sm:w-full max-sm:px-4 max-sm:my-4'>
+            {fooditems.length == 0 ? <div className='flex flex-col justify-center items-center my-5'> <ClipLoader color={"#800020"} size={50} aria-label="Loading Spinner" data-testid="loader"/> <p>[ Loading might take few moments if backend services are down ]</p>
+            <p>[ I kindly request you to come back after 2 minutes. ]</p> </div> : <div className='w-full px-10 my-8 overflow-x-auto max-sm:w-full max-sm:px-4 max-sm:my-4'>
                 {foodcategory.filter((category) =>
                     fooditems.some(
                         (item) =>
