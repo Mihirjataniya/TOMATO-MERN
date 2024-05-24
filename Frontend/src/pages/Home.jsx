@@ -47,8 +47,8 @@ const Home = () => {
                             <input onChange={(e)=>{setSearch(e.target.value)}} type="search" id="default-search" className="block w-full bg-transparent p-4 ps-10 text-sm border  rounded-lg placeholder-white max-sm:p-2 max-sm:ps-8" placeholder="Search Items.." required />
                         </div>
             </div>
-            {fooditems.length == 0 ? <div className='flex flex-col justify-center items-center my-5'> <ClipLoader color={"#800020"} size={50} aria-label="Loading Spinner" data-testid="loader"/> <p>[ Loading might take few moments if backend services are down ]</p>
-            <p>[ I kindly request you to come back after 2 minutes. ]</p> </div> : <div className='w-full px-10 my-8 overflow-x-auto max-sm:w-full max-sm:px-4 max-sm:my-4'>
+            {fooditems.length == 0 ? <div className='flex flex-col justify-center items-center my-5'> <ClipLoader color={"#800020"} size={50} aria-label="Loading Spinner" data-testid="loader"/> <p className='max-sm:text-xs text-center text-red-600 my-1'>[ Loading might take few moments if backend services are down ]</p>
+            <p className='max-sm:text-xs text-center text-red-600 my-1'>[ I kindly request you to come back after 2 minutes. ]</p> </div> : <div className='w-full px-10 my-8 overflow-x-auto max-sm:w-full max-sm:px-4 max-sm:my-4'>
                 {foodcategory.filter((category) =>
                     fooditems.some(
                         (item) =>
