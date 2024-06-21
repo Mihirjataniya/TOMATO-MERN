@@ -104,8 +104,6 @@ UserRouter.get("/getuser",authMiddleware,async (req,res)=>{
 
     try {
         const response = await Users.findOne({_id: userId})
-        console.log(userId)
-        console.log()
         res.status(200).json({
             name: response.name,
             phone: response.phone

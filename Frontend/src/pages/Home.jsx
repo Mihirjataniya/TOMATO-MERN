@@ -7,25 +7,22 @@ import ItemHeading from '../components/ItemHeading'
 import Carousel from '../components/Carousel'
 import API_URL from '../Config'
 import ClipLoader from "react-spinners/ClipLoader";
-import foodCategory from "../../../JSON/foodCategory.json"
+import { Food_items } from '../../Food_items'
+import { Food_category } from '../../Food_category'
 const Home = () => {
     
     const [search,setSearch] = useState('')
     const [fooditems, setFooditems] = useState([])
     const [foodcategory, setFoodcategory] = useState([])
     
-
     const Retrivedata = async () => {
-
+        
         try {
-            // const response = await axios.get( `${API_URL}/Display/data`)
-            setFooditems(response.data.food_items)
-            setFoodcategory(response.data.food_category)
+            setFooditems(Food_items)
+            setFoodcategory(Food_category)
         } catch (error) {
             console.log(error)
         }
-
-        
     }
 
     useEffect(() => {
